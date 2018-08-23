@@ -8,7 +8,7 @@ button.addEventListener('click', function (e) {
     alert('Greetings!');
 
 });
-document.body.appendChild(button);
+document.body.insertBefore(button,document.querySelector('script'));
 
 //2. Adds an event listener for a clicked textbox button, where the text box content is displayed in an alert message.
 
