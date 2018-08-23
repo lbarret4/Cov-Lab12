@@ -9,3 +9,13 @@ button.addEventListener('click', function (e) {
 
 });
 document.body.appendChild(button);
+
+//2. Adds an event listener for a clicked textbox button, where the text box content is displayed in an alert message.
+
+let textBox = document.querySelector('input[type=\'text\']');
+let textBtn = document.querySelector('#textBtn');
+
+textBtn.addEventListener('click',function(e){
+  e.preventDefault();
+  alert(textBox.value);
+})
