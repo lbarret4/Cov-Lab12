@@ -17,4 +17,15 @@ textBtn.click(function(e){
 })
 
 
+//3. Changes background color of div area on the jQuery page as mouse hovers over 
+let $div = $('div');
+let oldColor =$div.css('backgroundColor');
+
+$div.hover(function(){
+    $div.css('backgroundColor','red');
+    
+  },function(){
+    $div.css('backgroundColor',oldColor);
+    
+  })
 
