@@ -28,26 +28,44 @@ div.addEventListener('mousemove', function () {
     div.style.backgroundColor = 'red';
 });
 
-div3.addEventListener("mouseout",function(){
-    div3.style.backgroundColor= oldColor;
-    });
+div3.addEventListener("mouseout", function () {
+    div3.style.backgroundColor = oldColor;
+});
 
 //4. Add text paragraph that changes color randomly when clicked
 
 let p = document.createElement('p');
-let pText =document.createTextNode('****************************************************Click me* **************************************************** ');
+let pText = document.createTextNode('****************************************************Click me* **************************************************** ');
 p.appendChild(pText);
-document.body.insertBefore(p,button.nextSibling);
+document.body.insertBefore(p, button.nextSibling);
 
-p.addEventListener("click",function(){
-  p.style.color= randomColor() ;
+p.addEventListener("click", function () {
+    p.style.color = randomColor();
 })
 
 
 function randomColor() {
-      let [red, green, blue] = [Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255)];
-      return `rgb(${red},${green},${blue})`;
-  }
+    let [red, green, blue] = [Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255)];
+    return `rgb(${red},${green},${blue})`;
+}
 
 
+//6. Add friends list to DOM page by pressing friends list button
+let friends = ['Charles', 'Jemma', 'Kim', 'Amanda', 'Kenji', 'John', 'Candice', 'Robert', 'Tina', 'Patricia'];
 
+let liBtn = document.querySelector('#listBtn');
+let ul = document.querySelector('ul');
+
+liBtn.addEventListener('click', addList(), { once: true });
+
+function addList() {
+    let numLi = friends.length;
+    for (let friend of friends) {
+        console.log(numLi + " " + friend)
+        let li = document.createElement('li');
+        let liText = document.createTextNode(friend);
+        li.appendChild(liText);
+        ul.appendChild(li);
+    }
+
+}
