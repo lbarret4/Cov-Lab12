@@ -14,7 +14,7 @@ textBtn.click(function(e){
   e.preventDefault();
   let text = $('input[type=\'text\']').val();
   window.alert(text);
-})
+});
 
 
 //3. Changes background color of div area on the jQuery page as mouse hovers over 
@@ -27,5 +27,19 @@ $div.hover(function(){
   },function(){
     $div.css('backgroundColor',oldColor);
     
-  })
+  });
+
+  //4. Add text paragraph that changes color randomly when clicked 
+  let $para = $('<p>****************************************************Click me* ****************************************************</p>').insertAfter(button);
+  $para.on('click',function(){
+    
+    $para.css('color', randomColor());
+   });
+  
+   function randomColor() {
+        let [red, green, blue] = [Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255), Math.ceil(Math.random() * 255)];
+        return `rgb(${red},${green},${blue})`;
+    }
+
+
 
