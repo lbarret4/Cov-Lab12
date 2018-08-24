@@ -30,7 +30,7 @@ $div.hover(function () {
 });
 
 //4. Add text paragraph that changes color randomly when clicked 
-let $para = $('<p>****************************************************Click me* ****************************************************</p>').insertAfter(button);
+let $para = $('<p>****************************************************Click me* ****************************************************</p>').insertAfter($('form'));
 $para.on('click', function () {
 
     $para.css('color', randomColor());
@@ -41,7 +41,22 @@ function randomColor() {
     return `rgb(${red},${green},${blue})`;
 }
 
-//6. Add friends list to DOM page by pressing friends list button
+//5.Adds an empty div area to the jQuery page and a button that adds    span enclosing text 
+let $divBtn = $('<button> Show Name </button>');
+let $divSpan = $('<div></div>');
+let $span = $('<span> Llewellyn Barrett </span>');
+
+$('form').after($divBtn);
+$divBtn.after($divSpan);
+$divBtn.click(function (e) {
+    e.preventDefault();
+    $divSpan.append($span);
+
+});
+
+
+
+//6. Add friends list to jQuery page once by pressing friends list button
 let friends = ['Charles', 'Jemma', 'Kim', 'Amanda', 'Kenji', 'John', 'Candice', 'Robert', 'Tina', 'Patricia'];
 
 let $ul = $('ul');

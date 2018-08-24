@@ -3,3 +3,8 @@ div {
     background-color: black;
     margin: 0.5em 0em;
 }
+
+div span {
+    background-color: white;
+    color:red;
+}
